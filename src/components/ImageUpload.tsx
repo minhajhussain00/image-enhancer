@@ -1,10 +1,13 @@
 import React from "react"
 
 
-const ImageUpload = () => {
+const ImageUpload = ({Imagehandler}:{Imagehandler: (image: File) => void}) => {
 
   const ShowImageHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0]
+    const file = e.target.files?.[0];
+    if (file) {
+      Imagehandler(file);
+    }
   }
   return (
     <div className="bg-white shadow-lg rounded-2xl p-6 w-full max-w-2xl">

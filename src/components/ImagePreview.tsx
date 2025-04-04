@@ -1,7 +1,7 @@
 import Loader from "./Loader"
 
 
-const ImagePreview = ({uploadedImage,isenhanced,isloading}:{uploadedImage:string,isenhanced:string,isloading:boolean}) => {
+const ImagePreview = ({uploadedImage,enhanced,isloading}:{uploadedImage:string,enhanced:string,isloading:boolean}) => {
   return (
     <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl">
        <div className="bg-white shadow-lg rounded-xl overflow-hidden">
@@ -26,9 +26,9 @@ const ImagePreview = ({uploadedImage,isenhanced,isloading}:{uploadedImage:string
                     Enhanced Image
                 </h2>
 
-                {isenhanced && !isloading && (
+                {enhanced && !isloading && (
                     <img
-                        src={isenhanced}
+                        src={enhanced}
                         alt=""
                         className="w-full h-full object-cover"
                     />
